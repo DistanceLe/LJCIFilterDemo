@@ -305,6 +305,114 @@ NSString *const LJCIStripesGenerator = @"CIStripesGenerator";
 /** (阳光)(striation 条纹 contrast 对比) inputCenter  inputColor  inputSunRadius  inputMaxStriationRadius(0~10)  inputStriationStrength(0~3)  inputStriationContrast(0~5)  inputTime */
 NSString *const LJCISunbeamsGenerator = @"CISunbeamsGenerator";//iOS 9
 
+#pragma mark - ================ CICategoryReduction(减少) ==================
+/**  (返回一个单像素的图片)inputImage  inputExtent */
+NSString *const LJCIAreaAverage = @"CIAreaAverage";//iOS 9
+/**  (histogram柱状图)inputImage  inputExtent  inputCount  inputScale */
+NSString *const LJCIAreaHistogram = @"CIAreaHistogram";//iOS 8
+/**  (返回一个单像素的图片)inputImage  inputExtent */
+NSString *const LJCIAreaMaximum = @"CIAreaMaximum";//iOS 9
+/**  (返回一个单像素的图片)inputImage  inputExtent */
+NSString *const LJCIAreaMaximumAlpha = @"CIAreaMaximumAlpha";//iOS 9
+/**  (返回一个单像素的图片)inputImage  inputExtent */
+NSString *const LJCIAreaMinimum = @"CIAreaMinimum";//iOS 9
+/**  (返回一个单像素的图片)inputImage  inputExtent */
+NSString *const LJCIAreaMinimumAlpha = @"CIAreaMinimumAlpha";//iOS 9
+/**  (返回 一个像素高的图片)inputImage  inputExtent */
+NSString *const LJCIColumnAverage = @"CIColumnAverage";//iOS 9
+/**  inputImage  inputHeight  inputHighLimit  inputLowLimit */
+NSString *const LJCIHistogramDisplayFilter = @"CIHistogramDisplayFilter";//iOS 8
+/**  (返回 一个像素高的图片)inputImage  inputExtent */
+NSString *const LJCIRowAverage = @"CIRowAverage";//iOS 9
+
+#pragma mark - ================ CICategoryGradient(梯度 生成图片的 无需inputImage) ==================
+/**  (gaussian高斯) inputCenter  inputColor0  inputColor1  inputRadius */
+NSString *const LJCIGaussianGradient = @"CIGaussianGradient";
+/**  (hue saturation色彩饱和度)  inputColorSpace  inputDither(发抖)  inputRadius  inputSoftness  inputValue   */
+NSString *const LJCIHueSaturationValueGradient = @"CIHueSaturationValueGradient";//iOS 10
+/**  inputPoint0  inputPoint1  inputColor0  inputColor1 */
+NSString *const LJCILinearGradient = @"CILinearGradient";
+/**  inputCenter  inputRadius0  inputRadius1  inputColor0  inputColor1 */
+NSString *const LJCIRadialGradient = @"CIRadialGradient";
+/**  (smooth 光滑)inputPoint0  inputPoint1  inputColor0  inputColor1 */
+NSString *const LJCISmoothLinearGradient = @"CISmoothLinearGradient";
+
+#pragma mark - ================ CICategoryStylize(程式化 风格化) ==================
+/**  inputImage  inputBackgroundImage  inputMaskImage */
+NSString *const LJCIBlendWithAlphaMask = @"CIBlendWithAlphaMask";
+/**  inputImage  inputBackgroundImage  inputMaskImage  */
+NSString *const LJCIBlendWithMask = @"CIBlendWithMask";
+/**  (软化一个图片)inputImage  inputRadius  inputIntensity */
+NSString *const LJCIBloom = @"CIBloom";
+/**  (模拟漫画图)inputImage */
+NSString *const LJCIComicEffect = @"CIComicEffect";//iOS 9
+/**  (Convolution 卷积)inputImage  inputWeights[0 0 0 0 1 0 0 0 0]  inputBias */
+NSString *const LJCIConvolution3X3 = @"CIConvolution3X3";
+/**  inputImage  inputWeights [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0]  inputBias */
+NSString *const LJCIConvolution5X5 = @"CIConvolution5X5";
+/**  inputImage  inputWeights  inputBias */
+NSString *const LJCIConvolution7X7 = @"CIConvolution7X7";//iOS 9
+/**  inputImage  inputWeights[0 0 0 0 1 0 0 0 0]  inputBias */
+NSString *const LJCIConvolution9Horizontal = @"CIConvolution9Horizontal";
+/**  inputImage  inputWeights[0 0 0 0 1 0 0 0 0]  inputBia */
+NSString *const LJCIConvolution9Vertical = @"CIConvolution9Vertical";
+/**  (crystallize 结晶)马赛克的感觉 inputImage  inputRadius  inputCenter  */
+NSString *const LJCICrystallize = @"CICrystallize";//iOS 9
+/**  (突出一点，周围模糊)inputImage  inputPoint0  inputPoint1  inputSaturation  inputUnsharpMaskRadius  inputUnsharpMaskIntensity  inputRadius */
+NSString *const LJCIDepthOfField = @"CIDepthOfField";//iOS 9
+/**  (描出轮廓 颜色变深)inputImage  inputIntensity */
+NSString *const LJCIEdges = @"CIEdges";//iOS 9
+/**  (描出轮廓 黑白)inputImage  inputRadius */
+NSString *const LJCIEdgeWork = @"CIEdgeWork";//iOS 9
+/**  (gloom 阴暗)  inputImage  inputRadius  inputIntensity */
+NSString *const LJCIGloom = @"CIGloom";
+/**  (去除黑色 保留白色并且有过度)inputImage  inputRadius */
+NSString *const LJCIHeightFieldFromMask = @"CIHeightFieldFromMask";//iOS 9
+/**  (六边形 像素化  变模糊)  inputImage  inputCenter  inputScale */
+NSString *const LJCIHexagonalPixellate = @"CIHexagonalPixellate";//iOS 9
+/**  (阴影变亮)inputImage  inputHighlightAmount  inputShadowAmount */
+NSString *const LJCIHighlightShadowAdjust = @"CIHighlightShadowAdjust";
+/**  (素描图 的样子)inputImage  inputNRNoiseLevel  inputNRSharpness(锐度)  inputEdgeIntensity   inputThreshold  inputContrast（对比） */
+NSString *const LJCILineOverlay = @"CILineOverlay";//iOS 9
+/**  inputImage inputCenter  inputScale */
+NSString *const LJCIPixellate = @"CIPixellate";
+/**  (点状化 拼图的感觉)inputImage  inputRadius  inputCenter */
+NSString *const LJCIPointillize = @"CIPointillize";//iOS 9
+/**  (替换材质)  inputImage  inputShadingImage  inputScale */
+NSString *const LJCIShadedMaterial = @"CIShadedMaterial";//iOS 9
+/**  (用颜色 替换颜色)inputImage
+ inputCenterColor1  inputReplacementColor1  inputCloseness1  inputContrast1
+ inputCenterColor2  inputReplacementColor2  inputCloseness2  inputContrast2
+ inputCenterColor3  inputReplacementColor3  inputCloseness3  inputContrast3 */
+NSString *const LJCISpotColor = @"CISpotColor";//iOS 9
+/**  (点光源的效果)inputImage  inputLightPosition  inputLightPointsAt  inputBrightness  inputConcentration  inputColor */
+NSString *const LJCISpotLight = @"CISpotLight";//iOS 9
+
+#pragma mark - ================ CICategorySharpen(削尖) ==================
+/**  (通过锐化增加图像细节)inputImage  inputSharpness */
+NSString *const LJCISharpenLuminance = @"CISharpenLuminance";
+/**  (增加图像中不同颜色的像素之间的边缘的对比度)inputImage  inputRadius  inputIntensity */
+NSString *const LJCIUnsharpMask = @"CIUnsharpMask";
+
+
+#pragma mark - ================ CICategoryBlur(使模糊) ==================
+/**  (box 箱)inputImage  inputRadius */
+NSString *const LJCIBoxBlur = @"CIBoxBlur";//iOS 9
+/**  (disc 圆盘)inputImage  inputRadius */
+NSString *const LJCIDiscBlur = @"CIDiscBlur";//iOS 9
+/**  inputImage  inputRadius */
+NSString *const LJCIGaussianBlur = @"CIGaussianBlur";
+/**  inputImage  inputMask  inputRadius */
+NSString *const LJCIMaskedVariableBlur = @"CIMaskedVariableBlur";//Mac 10.10
+/**  (计算一组相邻像素的中值，并用中值替换每个像素值。 变清晰)inputImage  */
+NSString *const LJCIMedianFilter = @"CIMedianFilter";//iOS 9
+/**  (motion手势  橡皮擦擦过的效果)inputImage   inputRadius  inputAngle*/
+NSString *const LJCIMotionBlur = @"CIMotionBlur";//iOS 8.3
+/**  (让图片更清晰)inputImage  inputNoiseLevel(0~0.1)  inputSharpness */
+NSString *const LJCINoiseReduction = @"CINoiseReduction";//iOS 9
+/**  (高速运动 的效果)inputImage  inputCenter  inputAmount */
+NSString *const LJCIZoomBlur = @"CIZoomBlur";//iOS 8.3
+
 
 
 

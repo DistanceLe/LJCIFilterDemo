@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-/**  
+/**   一共180个滤镜
  inputCenter -> CIVector
  inputPoint -> CIVector
  inputSize -> CIVector
@@ -22,7 +22,7 @@ UIKIT_EXTERN NSString *const LJCIBumpDistortion;
 /**  inputAngle, inputCenter inputImage  inputRadius  inputScale */
 UIKIT_EXTERN NSString *const LJCIBumpDistortionLinear;
 /**  (splash 斑点)inputCenter inputImage  inputRadius*/
-UIKIT_EXTERN NSString *const LJCICircleSplashDistortion;
+UIKIT_EXTERN NSString *const LJCICircularScreen;
 /**  (circularWrap 环形包) inputAngle  inputCenter inputImage  inputRadius*/
 UIKIT_EXTERN NSString *const LJCICircularWrap;//iOS 9
 /**  (displacement 代替 置换） inputDisplacementImage inputImage inputScale*/
@@ -258,7 +258,7 @@ UIKIT_EXTERN NSString *const LJCISwipeTransition;
 UIKIT_EXTERN NSString *const LJCIAffineClamp;
 /**  inputImage  inputTransform  */
 UIKIT_EXTERN NSString *const LJCIAffineTile;
-/**  inputImage  inputExtent */
+/**  （clamp 夹紧）inputImage  inputExtent */
 UIKIT_EXTERN NSString *const LJCIClamp;//iOS 10;
 /**  inputImage  inputCenter  inputAngle  inputWidth */
 UIKIT_EXTERN NSString *const LJCIEightfoldReflectedTile;
@@ -316,36 +316,112 @@ UIKIT_EXTERN NSString *const LJCISunbeamsGenerator;//iOS 9
 
 
 #pragma mark - ================ CICategoryReduction(减少) ==================
-///**  <#Description#> */
-//UIKIT_EXTERN NSString *const LJ
-///**  <#Description#> */
-//UIKIT_EXTERN NSString *const LJ
-///**  <#Description#> */
-//UIKIT_EXTERN NSString *const LJ
-///**  <#Description#> */
-//UIKIT_EXTERN NSString *const LJ
-///**  <#Description#> */
-//UIKIT_EXTERN NSString *const LJ
-///**  <#Description#> */
-//UIKIT_EXTERN NSString *const LJ
-///**  <#Description#> */
-//UIKIT_EXTERN NSString *const LJ
-///**  <#Description#> */
-//UIKIT_EXTERN NSString *const LJ
-///**  <#Description#> */
-//UIKIT_EXTERN NSString *const LJ
-///**  <#Description#> */
-//UIKIT_EXTERN NSString *const LJ
-///**  <#Description#> */
-//UIKIT_EXTERN NSString *const LJ
+/**  (返回一个单像素的图片)inputImage  inputExtent */
+UIKIT_EXTERN NSString *const LJCIAreaAverage;//iOS 9
+/**  (histogram柱状图)inputImage  inputExtent  inputCount  inputScale */
+UIKIT_EXTERN NSString *const LJCIAreaHistogram;//iOS 8
+/**  (返回一个单像素的图片)inputImage  inputExtent */
+UIKIT_EXTERN NSString *const LJCIAreaMaximum;//iOS 9
+/**  (返回一个单像素的图片)inputImage  inputExtent */
+UIKIT_EXTERN NSString *const LJCIAreaMaximumAlpha;//iOS 9
+/**  (返回一个单像素的图片)inputImage  inputExtent */
+UIKIT_EXTERN NSString *const LJCIAreaMinimum;//iOS 9
+/**  (返回一个单像素的图片)inputImage  inputExtent */
+UIKIT_EXTERN NSString *const LJCIAreaMinimumAlpha;//iOS 9
+/**  (返回 一个像素高的图片)inputImage  inputExtent */
+UIKIT_EXTERN NSString *const LJCIColumnAverage;//iOS 9
+/**  inputImage  inputHeight  inputHighLimit  inputLowLimit */
+UIKIT_EXTERN NSString *const LJCIHistogramDisplayFilter;//iOS 8
+/**  (返回 一个像素高的图片)inputImage  inputExtent */
+UIKIT_EXTERN NSString *const LJCIRowAverage;//iOS 9
+
+#pragma mark - ================ CICategoryGradient(梯度 生成图片的 无需inputImage) ==================
+/**  (gaussian高斯) inputCenter  inputColor0  inputColor1  inputRadius */
+UIKIT_EXTERN NSString *const LJCIGaussianGradient;
+/**  (hue saturation色彩饱和度)  inputColorSpace  inputDither(发抖)  inputRadius  inputSoftness  inputValue   */
+UIKIT_EXTERN NSString *const LJCIHueSaturationValueGradient;//iOS 10
+/**  inputPoint0  inputPoint1  inputColor0  inputColor1 */
+UIKIT_EXTERN NSString *const LJCILinearGradient;
+/**  inputCenter  inputRadius0  inputRadius1  inputColor0  inputColor1 */
+UIKIT_EXTERN NSString *const LJCIRadialGradient;
+/**  (smooth 光滑)inputPoint0  inputPoint1  inputColor0  inputColor1 */
+UIKIT_EXTERN NSString *const LJCISmoothLinearGradient;
+
+#pragma mark - ================ CICategoryStylize(程式化 风格化) ==================
+/**  inputImage  inputBackgroundImage  inputMaskImage */
+UIKIT_EXTERN NSString *const LJCIBlendWithAlphaMask;
+/**  inputImage  inputBackgroundImage  inputMaskImage  */
+UIKIT_EXTERN NSString *const LJCIBlendWithMask;
+/**  (软化一个图片)inputImage  inputRadius  inputIntensity */
+UIKIT_EXTERN NSString *const LJCIBloom;
+/**  (模拟漫画图)inputImage */
+UIKIT_EXTERN NSString *const LJCIComicEffect;//iOS 9
+/**  (Convolution 卷积)inputImage  inputWeights[0 0 0 0 1 0 0 0 0]  inputBias */
+UIKIT_EXTERN NSString *const LJCIConvolution3X3;
+/**  inputImage  inputWeights [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0]  inputBias */
+UIKIT_EXTERN NSString *const LJCIConvolution5X5;
+/**  inputImage  inputWeights  inputBias */
+UIKIT_EXTERN NSString *const LJCIConvolution7X7;//iOS 9
+/**  inputImage  inputWeights[0 0 0 0 1 0 0 0 0]  inputBias */
+UIKIT_EXTERN NSString *const LJCIConvolution9Horizontal;
+/**  inputImage  inputWeights[0 0 0 0 1 0 0 0 0]  inputBia */
+UIKIT_EXTERN NSString *const LJCIConvolution9Vertical;
+/**  (crystallize 结晶)马赛克的感觉 inputImage  inputRadius  inputCenter  */
+UIKIT_EXTERN NSString *const LJCICrystallize;//iOS 9
+/**  (突出一点，周围模糊)inputImage  inputPoint0  inputPoint1  inputSaturation  inputUnsharpMaskRadius  inputUnsharpMaskIntensity  inputRadius */
+UIKIT_EXTERN NSString *const LJCIDepthOfField;//iOS 9
+/**  (描出轮廓 颜色变深)inputImage  inputIntensity */
+UIKIT_EXTERN NSString *const LJCIEdges;//iOS 9
+/**  (描出轮廓 黑白)inputImage  inputRadius */
+UIKIT_EXTERN NSString *const LJCIEdgeWork;//iOS 9
+/**  (gloom 阴暗)  inputImage  inputRadius  inputIntensity */
+UIKIT_EXTERN NSString *const LJCIGloom;
+/**  (去除黑色 保留白色并且有过度)inputImage  inputRadius */
+UIKIT_EXTERN NSString *const LJCIHeightFieldFromMask;//iOS 9
+/**  (六边形 像素化  变模糊)  inputImage  inputCenter  inputScale */
+UIKIT_EXTERN NSString *const LJCIHexagonalPixellate;//iOS 9
+/**  (阴影变亮)inputImage  inputHighlightAmount  inputShadowAmount */
+UIKIT_EXTERN NSString *const LJCIHighlightShadowAdjust;
+/**  (素描图 的样子)inputImage  inputNRNoiseLevel  inputNRSharpness(锐度)  inputEdgeIntensity   inputThreshold  inputContrast（对比） */
+UIKIT_EXTERN NSString *const LJCILineOverlay;//iOS 9
+/**  inputImage inputCenter  inputScale */
+UIKIT_EXTERN NSString *const LJCIPixellate;
+/**  (点状化 拼图的感觉)inputImage  inputRadius  inputCenter */
+UIKIT_EXTERN NSString *const LJCIPointillize;//iOS 9
+/**  (替换材质)  inputImage  inputShadingImage  inputScale */
+UIKIT_EXTERN NSString *const LJCIShadedMaterial;//iOS 9
+/**  (用颜色 替换颜色)inputImage
+ inputCenterColor1  inputReplacementColor1  inputCloseness1  inputContrast1  
+ inputCenterColor2  inputReplacementColor2  inputCloseness2  inputContrast2  
+ inputCenterColor3  inputReplacementColor3  inputCloseness3  inputContrast3 */
+UIKIT_EXTERN NSString *const LJCISpotColor;//iOS 9
+/**  (点光源的效果)inputImage  inputLightPosition  inputLightPointsAt  inputBrightness  inputConcentration  inputColor */
+UIKIT_EXTERN NSString *const LJCISpotLight;//iOS 9
+
+#pragma mark - ================ CICategorySharpen(削尖) ==================
+/**  (通过锐化增加图像细节)inputImage  inputSharpness */
+UIKIT_EXTERN NSString *const LJCISharpenLuminance;
+/**  (增加图像中不同颜色的像素之间的边缘的对比度)inputImage  inputRadius  inputIntensity */
+UIKIT_EXTERN NSString *const LJCIUnsharpMask;
 
 
-
-
-
-
-
-
+#pragma mark - ================ CICategoryBlur(使模糊) ==================
+/**  (box 箱)inputImage  inputRadius */
+UIKIT_EXTERN NSString *const LJCIBoxBlur;//iOS 9
+/**  (disc 圆盘)inputImage  inputRadius */
+UIKIT_EXTERN NSString *const LJCIDiscBlur;//iOS 9
+/**  inputImage  inputRadius */
+UIKIT_EXTERN NSString *const LJCIGaussianBlur;
+/**  inputImage  inputMask  inputRadius */
+UIKIT_EXTERN NSString *const LJCIMaskedVariableBlur;//Mac 10.10
+/**  (计算一组相邻像素的中值，并用中值替换每个像素值。 变清晰)inputImage  */
+UIKIT_EXTERN NSString *const LJCIMedianFilter;//iOS 9
+/**  (motion手势  橡皮擦擦过的效果)inputImage   inputRadius  inputAngle*/
+UIKIT_EXTERN NSString *const LJCIMotionBlur;//iOS 8.3
+/**  (让图片更清晰)inputImage  inputNoiseLevel(0~0.1)  inputSharpness */
+UIKIT_EXTERN NSString *const LJCINoiseReduction;//iOS 9
+/**  (高速运动 的效果)inputImage  inputCenter  inputAmount */
+UIKIT_EXTERN NSString *const LJCIZoomBlur;//iOS 8.3
 
 
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A0F75DC1E89F24500258BD6 /* CIFilter 所以类别及属性.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0F75DB1E89F24500258BD6 /* CIFilter 所以类别及属性.rtf */; };
 		2A24023D1E278DED00FF54F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24023C1E278DED00FF54F0 /* main.m */; };
 		2A2402401E278DED00FF54F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24023F1E278DED00FF54F0 /* AppDelegate.m */; };
 		2A2402431E278DED00FF54F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2402421E278DED00FF54F0 /* ViewController.m */; };
@@ -41,6 +40,7 @@
 		2AA55EC71E45AA0200140497 /* head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55EC61E45AA0200140497 /* head.jpg */; };
 		2AA55EC91E45AA1B00140497 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55EC81E45AA1B00140497 /* button@2x.png */; };
 		2AA55ECF1E45B88200140497 /* CIFilter 所有分类.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55ECE1E45B88200140497 /* CIFilter 所有分类.rtf */; };
+		2AEE78611E8FAC0F0010690B /* CIFilter所有类别及属性.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE78601E8FAC0F0010690B /* CIFilter所有类别及属性.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A0F75DB1E89F24500258BD6 /* CIFilter 所以类别及属性.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "CIFilter 所以类别及属性.rtf"; sourceTree = "<group>"; };
 		2A2402381E278DED00FF54F0 /* CIImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A24023C1E278DED00FF54F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A24023E1E278DED00FF54F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +124,7 @@
 		2AA55EC61E45AA0200140497 /* head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head.jpg; sourceTree = "<group>"; };
 		2AA55EC81E45AA1B00140497 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
 		2AA55ECE1E45B88200140497 /* CIFilter 所有分类.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "CIFilter 所有分类.rtf"; sourceTree = "<group>"; };
+		2AEE78601E8FAC0F0010690B /* CIFilter所有类别及属性.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "CIFilter所有类别及属性.rtf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				2AA55ECE1E45B88200140497 /* CIFilter 所有分类.rtf */,
-				2A0F75DB1E89F24500258BD6 /* CIFilter 所以类别及属性.rtf */,
+				2AEE78601E8FAC0F0010690B /* CIFilter所有类别及属性.rtf */,
 				2AA55EC81E45AA1B00140497 /* button@2x.png */,
 				2AA55EC61E45AA0200140497 /* head.jpg */,
 				2AA55EC41E45A9F500140497 /* world.jpg */,
@@ -425,9 +425,9 @@
 				2AA55ECF1E45B88200140497 /* CIFilter 所有分类.rtf in Resources */,
 				2A24024B1E278DEE00FF54F0 /* LaunchScreen.storyboard in Resources */,
 				2A2402481E278DEE00FF54F0 /* Assets.xcassets in Resources */,
-				2A0F75DC1E89F24500258BD6 /* CIFilter 所以类别及属性.rtf in Resources */,
 				2A81C66A1E851CDA00C77C84 /* mark.png in Resources */,
 				2A2402461E278DED00FF54F0 /* Main.storyboard in Resources */,
+				2AEE78611E8FAC0F0010690B /* CIFilter所有类别及属性.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LJFilterConst.h"
 
 @interface LJFilterEffect : NSObject
 
