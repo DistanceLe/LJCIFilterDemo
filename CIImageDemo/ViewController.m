@@ -9,10 +9,18 @@
 #import "ViewController.h"
 #import <Accelerate/Accelerate.h>
 
+#import "LJFilterNameView.h"
+
+#import "LJPHPhotoTools.h"
+#import "LJFilterEffect.h"
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *originImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *maskImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *currentImageView;
 
+@property(nonatomic, strong)LJFilterNameView* nameView;
+@property(nonatomic, copy  )NSString* lastFilterName;
 @end
 
 @implementation ViewController
@@ -31,10 +39,136 @@
 //    [self visualEffectViewResult];
 //    self.currentImageView.image = [self blurryImage:self.originImageView.image withBlurLevel:0.3];
 //    [self setGaussianBlur];
-    [self test];
+    [self setGaussianBlur];
+    [self initUI];
 }
 
-/**  使用UIVisualEffectView来完成IOS中滤镜效果（ios8以上版本） */
+
+-(void)initUI{
+    self.nameView = [[LJFilterNameView alloc]init];
+    self.nameView.frame = CGRectMake(0, IPHONE_HEIGHT, IPHONE_WIDTH, IPHONE_WIDTH-60);
+    [self.view addSubview:self.nameView];
+    [self.nameView show];
+    @weakify(self);
+    [self.nameView callBackTitle:^(NSString* sender, id status) {
+        @strongify(self);
+        DLog(@"select Str = %@", sender);
+        [self setFilterWithName:sender];
+    }];
+}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    if (self.nameView.lj_y >= IPHONE_HEIGHT) {
+        [self.nameView show];
+    }else{
+        [self.nameView dismiss];
+    }
+}
+#pragma mark - ================ LJFilter ==================
+-(void)setFilterWithName:(NSString*)filterName{
+    if ([self.lastFilterName isEqualToString:filterName]) {
+        return;
+    }
+    self.lastFilterName = filterName;
+    CIFilter* filter = nil;
+    if ([filterName hasSuffix:@"Generator"] || [filterName hasSuffix:@"Gradient"]) {
+        filter = [LJFilterEffect getFilterWithName:filterName inputImage:nil];
+    }else{
+        filter = [LJFilterEffect getFilterWithName:filterName inputImage:self.originImageView.image];
+    }
+    
+    [filter setValue:@2.0f forKey:@"inputRadius"];
+//    CIImage *result = filter.outputImage;
+//    self.currentImageView.image = [UIImage imageWithCIImage:result];
+    self.currentImageView.image = [LJFilterEffect getImageFromFilter:filter];
+}
+
+
+#pragma mark - ================ CIFilter  毛玻璃 ==================
+-(void)setGaussianBlur{
+    //获取毛玻璃图片
+    CIImage* inputImage = [CIImage imageWithCGImage:self.originImageView.image.CGImage];
+    //获取滤镜，并设置（使用KVO键值输入）
+    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur" keysAndValues:kCIInputImageKey, inputImage, @"inputRadius", @2, nil];
+    //从滤镜中获取图片
+    CIImage *result = filter.outputImage;
+    self.currentImageView.image = [UIImage imageWithCIImage:result];
+    //将图片添加到filterImageView上
+    //self.filterImageView.image = filterImage;
+}
+
+-(void)test{
+    
+    //1、输入的源图 ->  先得到CGImage -> 再得到CIImage
+    CIImage* inputImage = [CIImage imageWithCGImage:self.originImageView.image.CGImage];
+    
+    //   2、添加滤镜 ，以及设置滤镜
+    CIFilter *filter = [CIFilter filterWithName:LJCIColorMonochrome];
+    //    kCIInputImageKey -> 通过 打印可以设置的属性里面 得到可以设置  inputImage -> 在接口文件里面 查找得到一个KEY
+    [filter setValue:inputImage forKey:kCIInputImageKey];
+    //  通过查询的属性设置滤镜
+    [filter setValue:[[CIColor alloc] initWithColor:[UIColor colorWithRed:0.472 green:1.000 blue:0.197 alpha:1.000]] forKey:kCIInputColorKey];
+    
+    [filter setValue:@0.5 forKey:kCIInputIntensityKey];
+    
+    //  3、CIContext 图像上下文,合并成一个包含原图 和滤镜效果的图像
+    //    image -> 滤镜输出的图像
+    //   fromRect -> 合成之后图像的尺寸 ： 图像.extent
+    CIImage *outPutImage = filter.outputImage;
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef image = [context createCGImage:outPutImage fromRect:outPutImage.extent];
+    _currentImageView.image = [UIImage imageWithCGImage:image];
+    ;
+    
+    CGImageRelease(image);
+}
+
+#pragma mark - ================ 添加多个滤镜 ==================
+/**  在第一次添加滤镜的方法里调用这个方法，并且不创建图像上下文的对象 */
+- (void)addColorFilter{
+    
+    //    1、源图
+    CIImage *inputImage = [CIImage imageWithCGImage:_originImageView.image.CGImage];
+    
+    //    2、滤镜
+    CIFilter *filter = [CIFilter filterWithName:LJCIColorMonochrome];
+    
+    [filter setValue:[[CIColor alloc] initWithColor:[UIColor colorWithRed:0.472 green:1.000 blue:0.197 alpha:1.000]] forKey:kCIInputColorKey];
+    
+    [filter setValue:@0.5 forKey:kCIInputIntensityKey];
+    //
+    [filter setValue:inputImage forKey:kCIInputImageKey];
+    NSLog(@"%@",filter.attributes);
+    
+    
+    //   3、CIContext 图像上下文
+    
+    CIImage *outPutImage = filter.outputImage;
+    [self addFilterLinkerWithImage:outPutImage];
+}
+
+/**  滤镜链的使用 */
+- (void)addFilterLinkerWithImage:(CIImage *)image{
+    CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"];
+    
+    [filter setValue:image forKey:kCIInputImageKey];
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    
+    CGImageRef resultImage = [context createCGImage:filter.outputImage fromRect:filter.outputImage.extent];
+    _currentImageView.image = [UIImage imageWithCGImage:resultImage];
+    //   把添加好滤镜效果的图片 保存到相册  不可以直接保存 outPutImage -> 这是一个没有把滤镜效果和原图合成的图像
+    UIImageWriteToSavedPhotosAlbum(_currentImageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    CGImageRelease(resultImage);
+}
+//保存照片的方法
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+    [LJPHPhotoTools saveImageToCameraRoll:image handler:^(BOOL success) {
+        DLog(@"保存。。%ld", success);
+    }];
+}
+
+
+#pragma mark - ================ 使用UIVisualEffectView来完成IOS中滤镜效果（ios8以上版本） ==================
 -(void)visualEffectViewResult{
     
     self.currentImageView.image = self.originImageView.image;
@@ -47,9 +181,9 @@
     });
 }
 
-/**  使用vImage API来完成IOS中滤镜效果 ,image:原图片， blur:模糊度*/
+#pragma mark - ================ 使用vImage API来完成IOS中滤镜效果 ,image:原图片， blur:模糊度 ==================
 - (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur {
-    /**  
+    /**
      Accelerate这个framework主要是用来做数字信号处理、图像处理相关的向量、矩阵运算的库。
      我们可以认为我们的图像都是由向量或者矩阵数据构成的，Accelerate里既然提供了高效的数学运算API，
      自然就能方便我们对图像做各种各样的处理 */
@@ -128,94 +262,6 @@
     
     return returnImage;
 }
-
-/**  毛玻璃 */
--(void)setGaussianBlur{
-    //获取毛玻璃图片
-    CIImage* inputImage = [CIImage imageWithCGImage:self.originImageView.image.CGImage];
-    //获取滤镜，并设置（使用KVO键值输入）
-    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur" keysAndValues:kCIInputImageKey, inputImage, @"inputRadius", @1.0f, nil];
-    //从滤镜中获取图片
-    CIImage *result = filter.outputImage;
-    self.currentImageView.image = [UIImage imageWithCIImage:result];
-    //将图片添加到filterImageView上
-    //self.filterImageView.image = filterImage;
-}
-
--(void)test{
-    
-    //1、输入的源图 ->  先得到CGImage -> 再得到CIImage
-    CIImage* inputImage = [CIImage imageWithCGImage:self.originImageView.image.CGImage];
-    
-    //   2、添加滤镜 ，以及设置滤镜
-    CIFilter *filter = [CIFilter filterWithName:@"CIColorMonochrome"];
-    //    kCIInputImageKey -> 通过 打印可以设置的属性里面 得到可以设置  inputImage -> 在接口文件里面 查找得到一个KEY
-    [filter setValue:inputImage forKey:kCIInputImageKey];
-    //  通过查询的属性设置滤镜
-    [filter setValue:[[CIColor alloc] initWithColor:[UIColor colorWithRed:0.472 green:1.000 blue:0.197 alpha:1.000]] forKey:kCIInputColorKey];
-    
-    [filter setValue:@0.5 forKey:kCIInputIntensityKey];
-    
-    //  3、CIContext 图像上下文,合并成一个包含原图 和滤镜效果的图像
-    //    image -> 滤镜输出的图像
-    //   fromRect -> 合成之后图像的尺寸 ： 图像.extent
-    CIImage *outPutImage = filter.outputImage;
-    CIContext *context = [CIContext contextWithOptions:nil];
-    CGImageRef image = [context createCGImage:outPutImage fromRect:outPutImage.extent];
-    _currentImageView.image = [UIImage imageWithCGImage:image];
-    ;
-    
-    CGImageRelease(image);
-}
-
-/**  滤镜链的使用 */
-- (void)addFilterLinkerWithImage:(CIImage *)image{
-    CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"];
-    
-    [filter setValue:image forKey:kCIInputImageKey];
-    
-    CIContext *context = [CIContext contextWithOptions:nil];
-    
-    CGImageRef resultImage = [context createCGImage:filter.outputImage fromRect:filter.outputImage.extent];
-    _currentImageView.image = [UIImage imageWithCGImage:resultImage];
-    //   把添加好滤镜效果的图片 保存到相册  不可以直接保存 outPutImage -> 这是一个没有把滤镜效果和原图合成的图像
-    UIImageWriteToSavedPhotosAlbum(_currentImageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-    CGImageRelease(resultImage);
-}
-//保存照片的方法
-- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
-    
-}
-
-
-/**  在第一次添加滤镜的方法里调用这个方法，并且不创建图像上下文的对象 */
-- (void)addColorFilter{
-    
-    //    1、源图
-    CIImage *inputImage = [CIImage imageWithCGImage:_originImageView.image.CGImage];
-    
-    //    2、滤镜
-    CIFilter *filter = [CIFilter filterWithName:@"CIColorMonochrome"];
-    
-    [filter setValue:[[CIColor alloc] initWithColor:[UIColor colorWithRed:0.472 green:1.000 blue:0.197 alpha:1.000]] forKey:kCIInputColorKey];
-    
-    [filter setValue:@0.5 forKey:kCIInputIntensityKey];
-    //
-    [filter setValue:inputImage forKey:kCIInputImageKey];
-    NSLog(@"%@",filter.attributes);
-    
-    
-    //   3、CIContext 图像上下文
-    
-    CIImage *outPutImage = filter.outputImage;
-    [self addFilterLinkerWithImage:outPutImage];
-}
-
-
-
-
-
-
 
 
 

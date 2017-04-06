@@ -17,6 +17,7 @@
 		2A2402611E278DEE00FF54F0 /* CIImageDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2402601E278DEE00FF54F0 /* CIImageDemoUITests.m */; };
 		2A68F6A01E8CAC6D0038F5E3 /* LJFilterEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A68F69F1E8CAC6D0038F5E3 /* LJFilterEffect.m */; };
 		2A68F6A41E8CB83A0038F5E3 /* LJFilterConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A68F6A31E8CB83A0038F5E3 /* LJFilterConst.m */; };
+		2A7862881E91E14200332059 /* LJFilterNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7862871E91E14200332059 /* LJFilterNameView.m */; };
 		2A81C6691E851CDA00C77C84 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A81C63D1E851CDA00C77C84 /* Foundation+Log.m */; };
 		2A81C66A1E851CDA00C77C84 /* mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A81C63E1E851CDA00C77C84 /* mark.png */; };
 		2A81C66B1E851CDA00C77C84 /* NSNotificationCenter+LJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A81C6401E851CDA00C77C84 /* NSNotificationCenter+LJ.m */; };
@@ -81,6 +82,8 @@
 		2A68F69F1E8CAC6D0038F5E3 /* LJFilterEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFilterEffect.m; sourceTree = "<group>"; };
 		2A68F6A21E8CB83A0038F5E3 /* LJFilterConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFilterConst.h; sourceTree = "<group>"; };
 		2A68F6A31E8CB83A0038F5E3 /* LJFilterConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFilterConst.m; sourceTree = "<group>"; };
+		2A7862861E91E14200332059 /* LJFilterNameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFilterNameView.h; sourceTree = "<group>"; };
+		2A7862871E91E14200332059 /* LJFilterNameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFilterNameView.m; sourceTree = "<group>"; };
 		2A81C63D1E851CDA00C77C84 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		2A81C63E1E851CDA00C77C84 /* mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mark.png; sourceTree = "<group>"; };
 		2A81C63F1E851CDA00C77C84 /* NSNotificationCenter+LJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+LJ.h"; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				2A24023F1E278DED00FF54F0 /* AppDelegate.m */,
 				2A2402411E278DED00FF54F0 /* ViewController.h */,
 				2A2402421E278DED00FF54F0 /* ViewController.m */,
+				2A7862861E91E14200332059 /* LJFilterNameView.h */,
+				2A7862871E91E14200332059 /* LJFilterNameView.m */,
 				2A9571511E6A969000007E1D /* SecondViewController.h */,
 				2A9571521E6A969000007E1D /* SecondViewController.m */,
 				2A9571541E6A997700007E1D /* LJLayer.h */,
@@ -465,6 +470,7 @@
 				2A9571591E6AAFD200007E1D /* LJView.m in Sources */,
 				2A81C66E1E851CDA00C77C84 /* UIButton+LJ.m in Sources */,
 				2A2402431E278DED00FF54F0 /* ViewController.m in Sources */,
+				2A7862881E91E14200332059 /* LJFilterNameView.m in Sources */,
 				2A2402401E278DED00FF54F0 /* AppDelegate.m in Sources */,
 				2A81C66D1E851CDA00C77C84 /* NullSafe.m in Sources */,
 				2A81C6781E851CDA00C77C84 /* LJInfoAlert.m in Sources */,
