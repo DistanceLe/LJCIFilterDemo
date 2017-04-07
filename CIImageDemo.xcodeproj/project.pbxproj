@@ -15,6 +15,8 @@
 		2A24024B1E278DEE00FF54F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2402491E278DEE00FF54F0 /* LaunchScreen.storyboard */; };
 		2A2402561E278DEE00FF54F0 /* CIImageDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2402551E278DEE00FF54F0 /* CIImageDemoTests.m */; };
 		2A2402611E278DEE00FF54F0 /* CIImageDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2402601E278DEE00FF54F0 /* CIImageDemoUITests.m */; };
+		2A6813891E971F9000E8F6FB /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A6813881E971F9000E8F6FB /* bg.jpg */; };
+		2A68138B1E971FC700E8F6FB /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A68138A1E971FC700E8F6FB /* mask.png */; };
 		2A68F6A01E8CAC6D0038F5E3 /* LJFilterEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A68F69F1E8CAC6D0038F5E3 /* LJFilterEffect.m */; };
 		2A68F6A41E8CB83A0038F5E3 /* LJFilterConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A68F6A31E8CB83A0038F5E3 /* LJFilterConst.m */; };
 		2A7862881E91E14200332059 /* LJFilterNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7862871E91E14200332059 /* LJFilterNameView.m */; };
@@ -39,7 +41,7 @@
 		2A9571591E6AAFD200007E1D /* LJView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9571581E6AAFD200007E1D /* LJView.m */; };
 		2AA55EC51E45A9F500140497 /* world.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55EC41E45A9F500140497 /* world.jpg */; };
 		2AA55EC71E45AA0200140497 /* head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55EC61E45AA0200140497 /* head.jpg */; };
-		2AA55EC91E45AA1B00140497 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55EC81E45AA1B00140497 /* button@2x.png */; };
+		2AA55EC91E45AA1B00140497 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55EC81E45AA1B00140497 /* button.png */; };
 		2AA55ECF1E45B88200140497 /* CIFilter 所有分类.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55ECE1E45B88200140497 /* CIFilter 所有分类.rtf */; };
 		2AEE78611E8FAC0F0010690B /* CIFilter所有类别及属性.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE78601E8FAC0F0010690B /* CIFilter所有类别及属性.rtf */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		2A24025C1E278DEE00FF54F0 /* CIImageDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CIImageDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2402601E278DEE00FF54F0 /* CIImageDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIImageDemoUITests.m; sourceTree = "<group>"; };
 		2A2402621E278DEE00FF54F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A6813881E971F9000E8F6FB /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		2A68138A1E971FC700E8F6FB /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
 		2A68F69E1E8CAC6D0038F5E3 /* LJFilterEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFilterEffect.h; sourceTree = "<group>"; };
 		2A68F69F1E8CAC6D0038F5E3 /* LJFilterEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFilterEffect.m; sourceTree = "<group>"; };
 		2A68F6A21E8CB83A0038F5E3 /* LJFilterConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFilterConst.h; sourceTree = "<group>"; };
@@ -125,7 +129,7 @@
 		2A9571581E6AAFD200007E1D /* LJView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJView.m; sourceTree = "<group>"; };
 		2AA55EC41E45A9F500140497 /* world.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = world.jpg; sourceTree = "<group>"; };
 		2AA55EC61E45AA0200140497 /* head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head.jpg; sourceTree = "<group>"; };
-		2AA55EC81E45AA1B00140497 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		2AA55EC81E45AA1B00140497 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		2AA55ECE1E45B88200140497 /* CIFilter 所有分类.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "CIFilter 所有分类.rtf"; sourceTree = "<group>"; };
 		2AEE78601E8FAC0F0010690B /* CIFilter所有类别及属性.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "CIFilter所有类别及属性.rtf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,9 +213,11 @@
 			children = (
 				2AA55ECE1E45B88200140497 /* CIFilter 所有分类.rtf */,
 				2AEE78601E8FAC0F0010690B /* CIFilter所有类别及属性.rtf */,
-				2AA55EC81E45AA1B00140497 /* button@2x.png */,
+				2AA55EC81E45AA1B00140497 /* button.png */,
 				2AA55EC61E45AA0200140497 /* head.jpg */,
+				2A6813881E971F9000E8F6FB /* bg.jpg */,
 				2AA55EC41E45A9F500140497 /* world.jpg */,
+				2A68138A1E971FC700E8F6FB /* mask.png */,
 				2A24023C1E278DED00FF54F0 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -424,14 +430,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A68138B1E971FC700E8F6FB /* mask.png in Resources */,
 				2AA55EC51E45A9F500140497 /* world.jpg in Resources */,
 				2AA55EC71E45AA0200140497 /* head.jpg in Resources */,
-				2AA55EC91E45AA1B00140497 /* button@2x.png in Resources */,
+				2AA55EC91E45AA1B00140497 /* button.png in Resources */,
 				2AA55ECF1E45B88200140497 /* CIFilter 所有分类.rtf in Resources */,
 				2A24024B1E278DEE00FF54F0 /* LaunchScreen.storyboard in Resources */,
 				2A2402481E278DEE00FF54F0 /* Assets.xcassets in Resources */,
 				2A81C66A1E851CDA00C77C84 /* mark.png in Resources */,
 				2A2402461E278DED00FF54F0 /* Main.storyboard in Resources */,
+				2A6813891E971F9000E8F6FB /* bg.jpg in Resources */,
 				2AEE78611E8FAC0F0010690B /* CIFilter所有类别及属性.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,7 +39,7 @@
 //    [self visualEffectViewResult];
 //    self.currentImageView.image = [self blurryImage:self.originImageView.image withBlurLevel:0.3];
 //    [self setGaussianBlur];
-    [self setGaussianBlur];
+    //[self setGaussianBlur];
     [self initUI];
 }
 
@@ -65,18 +65,18 @@
 }
 #pragma mark - ================ LJFilter ==================
 -(void)setFilterWithName:(NSString*)filterName{
-    if ([self.lastFilterName isEqualToString:filterName]) {
-        return;
-    }
+//    if ([self.lastFilterName isEqualToString:filterName]) {
+//        return;
+//    }
     self.lastFilterName = filterName;
     CIFilter* filter = nil;
     if ([filterName hasSuffix:@"Generator"] || [filterName hasSuffix:@"Gradient"]) {
         filter = [LJFilterEffect getFilterWithName:filterName inputImage:nil];
     }else{
-        filter = [LJFilterEffect getFilterWithName:filterName inputImage:self.originImageView.image];
+        filter = [LJFilterEffect getFilterWithName:filterName inputImage:[UIImage imageNamed:@"world.jpg"]];
     }
     
-    [filter setValue:@2.0f forKey:@"inputRadius"];
+    //[filter setValue:@2.0f forKey:@"inputRadius"];
 //    CIImage *result = filter.outputImage;
 //    self.currentImageView.image = [UIImage imageWithCIImage:result];
     self.currentImageView.image = [LJFilterEffect getImageFromFilter:filter];
