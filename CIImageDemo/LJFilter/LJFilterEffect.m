@@ -22,29 +22,55 @@
     return filter;
 }
 
+static CIContext *context = nil;
 /**  根据 滤镜来获取 图片 */
 +(UIImage*)getImageFromFilter:(CIFilter*)filter{
     CIImage* outputImage = filter.outputImage;
-    CIContext *context = [CIContext contextWithOptions:nil];
+    context = [CIContext contextWithOptions:nil];
+    
+    if (outputImage.extent.size.width<150) {
+        DLog(@"😢<150");
+        CGFloat scaleX = 300 / outputImage.extent.size.width; // extent 返回图片的frame
+        CGFloat scaleY = 300 / outputImage.extent.size.height;
+        
+        CIImage *transformedImage = [outputImage imageByApplyingTransform:CGAffineTransformScale(CGAffineTransformIdentity, scaleX, scaleY)];
+        CGImageRef image = [context createCGImage:transformedImage fromRect:transformedImage.extent];
+        UIImage* returnImage = [UIImage imageWithCGImage:image];
+        CGImageRelease(image);
+        outputImage = nil;
+        return returnImage;
+        
+    }else if (outputImage.extent.size.width>10000){
+        DLog(@"👀>10000");
+        CGImageRef image = [context createCGImage:outputImage fromRect:CGRectMake(100, 100, 300, 300)];
+        UIImage* returnImage = [UIImage imageWithCGImage:image];
+        CGImageRelease(image);
+        outputImage = nil;
+        return returnImage;
+    }
+    
     CGImageRef image = [context createCGImage:outputImage fromRect:outputImage.extent];
     NSArray* array = filter.inputKeys;
+    UIImage* returnImage = [UIImage imageWithCGImage:image];
+    CGImageRelease(image);
     if ([array containsObject:@"inputImage"]) {
         CIImage* inputImage = [filter valueForKey:kCIInputImageKey];
         image = [context createCGImage:outputImage fromRect:inputImage.extent];
 //        image = [context createCGImage:outputImage fromRect:CGRectMake(0, 0, 200, 200)];
+        returnImage = [UIImage imageWithCGImage:image];
+        CGImageRelease(image);
+        outputImage = nil;
     }
+    DLog(@"😆");
     
-    
-    UIImage* returnImage = [UIImage imageWithCGImage:image];
 //    UIImage* returnImage = [UIImage imageWithCIImage:outputImage];
-    CGImageRelease(image);
     return returnImage;
 }
 
 /**  根据 滤镜来获取 CG图片 */
 +(CGImageRef)getCGImageRefFromFilter:(CIFilter*)filter{
     CIImage* outputImage = filter.outputImage;
-    CIContext *context = [CIContext contextWithOptions:nil];
+    context = [CIContext contextWithOptions:nil];
     CGImageRef image = [context createCGImage:outputImage fromRect:outputImage.extent];
     return image;
 }
@@ -60,6 +86,9 @@
     DLog(@"filterName:%@ inputKey:%@",filterName, array);
     //中心点：
     CGPoint center = CGPointMake(tempImage.extent.size.width/2.0, tempImage.extent.size.height/2.0);
+//    if (center.x<100) {
+//        center = CGPointMake(150, 150);
+//    }
     //遮罩图片：
     UIImage* maskImage = [UIImage imageNamed:@"mask.png"];
     CIImage* maskCIImage = [CIImage imageWithCGImage:maskImage.CGImage];
@@ -67,9 +96,19 @@
     UIImage* backgroundImage = [UIImage imageNamed:@"bg.jpg"];
     CIImage* backgroundCIImage = [CIImage imageWithCGImage:backgroundImage.CGImage];
     
-    UIColor* inputColor = kRGBColor(160, 30, 40, 1);
+    UIColor* inputColor = [UIColor orangeColor];
     CIColor* inputCIColor = [CIColor colorWithCGColor:inputColor.CGColor];
     
+    UIColor* inputColor1 = [UIColor greenColor];
+    CIColor* inputCIColor1 = [CIColor colorWithCGColor:inputColor1.CGColor];
+    
+    UIColor* inputColor2 = [UIColor blackColor];
+    CIColor* inputCIColor2 = [CIColor colorWithCGColor:inputColor2.CGColor];
+    
+    UIColor* inputColor3 = [UIColor yellowColor];
+    CIColor* inputCIColor3 = [CIColor colorWithCGColor:inputColor3.CGColor];
+    
+    NSData* inputData = [@"abcdefg" dataUsingEncoding:NSUTF8StringEncoding];
     
     NSMutableArray* contentProperty = [NSMutableArray array];
     /**  查找 滤镜属性，有在里面的  就给该属性赋值： */
@@ -117,11 +156,11 @@
             [contentProperty addObject:kCIInputRefractionKey];
         }
         if ([array containsObject:kCIInputWidthKey]) {
-            [filter setValue:@(40) forKey:kCIInputWidthKey];
+            [filter setValue:@(1.2) forKey:kCIInputWidthKey];
             [contentProperty addObject:kCIInputWidthKey];
         }
         if ([array containsObject:kCIInputSharpnessKey]) {
-            [filter setValue:@(400) forKey:kCIInputSharpnessKey];
+            [filter setValue:@(0.6) forKey:kCIInputSharpnessKey];
             [contentProperty addObject:kCIInputSharpnessKey];
         }
         if ([array containsObject:kCIInputIntensityKey]) {
@@ -217,6 +256,18 @@
             [filter setValue:@(0.12) forKey:@"inputConcentration"];
             [contentProperty addObject:@"inputConcentration"];
         }
+        if ([array containsObject:@"inputColor0"]) {
+            [filter setValue:inputCIColor1 forKey:@"inputColor0"];
+            [contentProperty addObject:@"inputColor0"];
+        }
+        if ([array containsObject:@"inputColor1"]) {
+            [filter setValue:inputCIColor2 forKey:@"inputColor1"];
+            [contentProperty addObject:@"inputColor1"];
+        }
+        if ([array containsObject:@"inputColor2"]) {
+            [filter setValue:inputCIColor3 forKey:@"inputColor2"];
+            [contentProperty addObject:@"inputColor2"];
+        }
         /**   CISpotColor
          inputCenterColor1,
          inputReplacementColor1,
@@ -255,6 +306,40 @@
             [contentProperty addObject:@"inputHighlightAmount"];
         }
         
+        if ([array containsObject:@"inputMessage"]) {
+            [filter setValue:inputData forKey:@"inputMessage"];
+            [contentProperty addObject:@"inputMessage"];
+        }
+//        if ([array containsObject:@"inputCompactStyle"]) {//0 - 1
+//            [filter setValue:@(1) forKey:@"inputCompactStyle"];
+//            [contentProperty addObject:@"inputCompactStyle"];
+//        }
+//        if ([array containsObject:@"inputCorrectionLevel"]) {//95~5
+//            if ([filterName isEqualToString:LJCIQRCodeGenerator]) {
+//                [filter setValue:@"H" forKey:@"inputCorrectionLevel"];
+//            }else{
+//                [filter setValue:@(95) forKey:@"inputCorrectionLevel"];
+//            }
+//            
+//            [contentProperty addObject:@"inputCorrectionLevel"];
+//        }
+//        if ([array containsObject:@"inputLayers"]) {//32~1
+//            [filter setValue:@(10) forKey:@"inputLayers"];
+//            [contentProperty addObject:@"inputLayers"];
+//        }
+//        if ([array containsObject:@"inputCubeDimension"]) {//2~64
+//            [filter setValue:@(10) forKey:@"inputCubeDimension"];
+//            [contentProperty addObject:@"inputCubeDimension"];
+//        }
+        if ([array containsObject:@"inputHighlightAmount"]) {//0.3~1
+            [filter setValue:@(0.8) forKey:@"inputHighlightAmount"];
+            [contentProperty addObject:@"inputHighlightAmount"];
+        }
+        
+//        if ([array containsObject:@"inputBarcodeHeight"]) {//500~1
+//            [filter setValue:@(400) forKey:@"inputBarcodeHeight"];
+//            [contentProperty addObject:@"inputBarcodeHeight"];
+//        }
     }
     DLog(@"have Set Property:%@\n\n\n\n-",contentProperty);
 }

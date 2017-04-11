@@ -23,38 +23,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rY6-Pg-wJK">
-                                <rect key="frame" x="15" y="72" width="305" height="152.5"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OBJ-WY-mmb">
-                                        <rect key="frame" x="0.0" y="0.0" width="152.5" height="152.5"/>
-                                        <color key="backgroundColor" red="0.30623790310500776" green="1" blue="0.27761725799052506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask.png" translatesAutoresizingMaskIntoConstraints="NO" id="OCe-2j-s1L">
-                                        <rect key="frame" x="152.5" y="0.0" width="152.5" height="152.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="rY6-Pg-wJK" secondAttribute="height" multiplier="2:1" id="h4f-77-t1G"/>
-                                </constraints>
-                            </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QKu-Yc-ZzO">
-                                <rect key="frame" x="15" y="70" width="290.5" height="290.5"/>
+                                <rect key="frame" x="15" y="70" width="290" height="290"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QKu-Yc-ZzO" secondAttribute="height" multiplier="1:1" id="qoL-oT-9aG"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OBJ-WY-mmb">
+                                <rect key="frame" x="10" y="428" width="140" height="140"/>
+                                <color key="backgroundColor" red="0.30623790310500776" green="1" blue="0.27761725799052506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mask.png" translatesAutoresizingMaskIntoConstraints="NO" id="OCe-2j-s1L">
+                                <rect key="frame" x="170" y="428" width="140" height="140"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OCe-2j-s1L" secondAttribute="height" multiplier="1:1" id="wKa-93-CAF"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="rY6-Pg-wJK" secondAttribute="trailing" id="LfF-Pt-i0l"/>
+                            <constraint firstItem="OCe-2j-s1L" firstAttribute="bottom" secondItem="OBJ-WY-mmb" secondAttribute="bottom" id="9ep-ve-zSo"/>
+                            <constraint firstItem="OCe-2j-s1L" firstAttribute="height" secondItem="OBJ-WY-mmb" secondAttribute="height" id="HvS-HH-4Nd"/>
                             <constraint firstItem="QKu-Yc-ZzO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S0g-ah-2QV"/>
-                            <constraint firstItem="rY6-Pg-wJK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="VC8-E1-MFg"/>
+                            <constraint firstItem="OBJ-WY-mmb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="TFk-Tr-xhu"/>
+                            <constraint firstAttribute="trailing" secondItem="OCe-2j-s1L" secondAttribute="trailing" constant="10" id="WW4-kf-MHI"/>
                             <constraint firstItem="QKu-Yc-ZzO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="70" id="Ws0-lb-tJu"/>
                             <constraint firstItem="QKu-Yc-ZzO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="jHf-qf-Wtr"/>
-                            <constraint firstItem="rY6-Pg-wJK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="tFr-GY-9Pc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OBJ-WY-mmb" secondAttribute="bottom" id="uOj-g4-5SH"/>
+                            <constraint firstItem="OCe-2j-s1L" firstAttribute="leading" secondItem="OBJ-WY-mmb" secondAttribute="trailing" constant="20" id="vkh-FX-qnG"/>
+                            <constraint firstItem="OCe-2j-s1L" firstAttribute="width" secondItem="OBJ-WY-mmb" secondAttribute="width" id="wV3-Up-zMv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z2W-z2-fLU">

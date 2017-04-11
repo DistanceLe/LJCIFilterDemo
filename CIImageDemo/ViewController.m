@@ -8,10 +8,9 @@
 
 #import "ViewController.h"
 #import <Accelerate/Accelerate.h>
+#import "LJPHPhotoTools.h"
 
 #import "LJFilterNameView.h"
-
-#import "LJPHPhotoTools.h"
 #import "LJFilterEffect.h"
 
 @interface ViewController ()

@@ -15,11 +15,6 @@
 		2A24024B1E278DEE00FF54F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2402491E278DEE00FF54F0 /* LaunchScreen.storyboard */; };
 		2A2402561E278DEE00FF54F0 /* CIImageDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2402551E278DEE00FF54F0 /* CIImageDemoTests.m */; };
 		2A2402611E278DEE00FF54F0 /* CIImageDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2402601E278DEE00FF54F0 /* CIImageDemoUITests.m */; };
-		2A6813891E971F9000E8F6FB /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A6813881E971F9000E8F6FB /* bg.jpg */; };
-		2A68138B1E971FC700E8F6FB /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A68138A1E971FC700E8F6FB /* mask.png */; };
-		2A68F6A01E8CAC6D0038F5E3 /* LJFilterEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A68F69F1E8CAC6D0038F5E3 /* LJFilterEffect.m */; };
-		2A68F6A41E8CB83A0038F5E3 /* LJFilterConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A68F6A31E8CB83A0038F5E3 /* LJFilterConst.m */; };
-		2A7862881E91E14200332059 /* LJFilterNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7862871E91E14200332059 /* LJFilterNameView.m */; };
 		2A81C6691E851CDA00C77C84 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A81C63D1E851CDA00C77C84 /* Foundation+Log.m */; };
 		2A81C66A1E851CDA00C77C84 /* mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A81C63E1E851CDA00C77C84 /* mark.png */; };
 		2A81C66B1E851CDA00C77C84 /* NSNotificationCenter+LJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A81C6401E851CDA00C77C84 /* NSNotificationCenter+LJ.m */; };
@@ -39,11 +34,16 @@
 		2A9571531E6A969000007E1D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9571521E6A969000007E1D /* SecondViewController.m */; };
 		2A9571561E6A997700007E1D /* LJLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9571551E6A997700007E1D /* LJLayer.m */; };
 		2A9571591E6AAFD200007E1D /* LJView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9571581E6AAFD200007E1D /* LJView.m */; };
-		2AA55EC51E45A9F500140497 /* world.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55EC41E45A9F500140497 /* world.jpg */; };
-		2AA55EC71E45AA0200140497 /* head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55EC61E45AA0200140497 /* head.jpg */; };
-		2AA55EC91E45AA1B00140497 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55EC81E45AA1B00140497 /* button.png */; };
-		2AA55ECF1E45B88200140497 /* CIFilter 所有分类.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2AA55ECE1E45B88200140497 /* CIFilter 所有分类.rtf */; };
-		2AEE78611E8FAC0F0010690B /* CIFilter所有类别及属性.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE78601E8FAC0F0010690B /* CIFilter所有类别及属性.rtf */; };
+		2ADAA0351E978A94002A7C55 /* LJFilterConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADAA0301E978A94002A7C55 /* LJFilterConst.m */; };
+		2ADAA0361E978A94002A7C55 /* LJFilterEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADAA0321E978A94002A7C55 /* LJFilterEffect.m */; };
+		2ADAA0371E978A94002A7C55 /* LJFilterNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADAA0341E978A94002A7C55 /* LJFilterNameView.m */; };
+		2ADAA0401E978B72002A7C55 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ADAA0391E978B72002A7C55 /* bg.jpg */; };
+		2ADAA0411E978B72002A7C55 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADAA03A1E978B72002A7C55 /* button.png */; };
+		2ADAA0421E978B72002A7C55 /* CIFilter 所有分类.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2ADAA03B1E978B72002A7C55 /* CIFilter 所有分类.rtf */; };
+		2ADAA0431E978B72002A7C55 /* CIFilter所有类别及属性.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2ADAA03C1E978B72002A7C55 /* CIFilter所有类别及属性.rtf */; };
+		2ADAA0441E978B72002A7C55 /* head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ADAA03D1E978B72002A7C55 /* head.jpg */; };
+		2ADAA0451E978B72002A7C55 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADAA03E1E978B72002A7C55 /* mask.png */; };
+		2ADAA0461E978B72002A7C55 /* world.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ADAA03F1E978B72002A7C55 /* world.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,14 +80,6 @@
 		2A24025C1E278DEE00FF54F0 /* CIImageDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CIImageDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2402601E278DEE00FF54F0 /* CIImageDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIImageDemoUITests.m; sourceTree = "<group>"; };
 		2A2402621E278DEE00FF54F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A6813881E971F9000E8F6FB /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
-		2A68138A1E971FC700E8F6FB /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
-		2A68F69E1E8CAC6D0038F5E3 /* LJFilterEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFilterEffect.h; sourceTree = "<group>"; };
-		2A68F69F1E8CAC6D0038F5E3 /* LJFilterEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFilterEffect.m; sourceTree = "<group>"; };
-		2A68F6A21E8CB83A0038F5E3 /* LJFilterConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFilterConst.h; sourceTree = "<group>"; };
-		2A68F6A31E8CB83A0038F5E3 /* LJFilterConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFilterConst.m; sourceTree = "<group>"; };
-		2A7862861E91E14200332059 /* LJFilterNameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFilterNameView.h; sourceTree = "<group>"; };
-		2A7862871E91E14200332059 /* LJFilterNameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFilterNameView.m; sourceTree = "<group>"; };
 		2A81C63D1E851CDA00C77C84 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		2A81C63E1E851CDA00C77C84 /* mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mark.png; sourceTree = "<group>"; };
 		2A81C63F1E851CDA00C77C84 /* NSNotificationCenter+LJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+LJ.h"; sourceTree = "<group>"; };
@@ -127,11 +119,19 @@
 		2A9571551E6A997700007E1D /* LJLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJLayer.m; sourceTree = "<group>"; };
 		2A9571571E6AAFD200007E1D /* LJView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJView.h; sourceTree = "<group>"; };
 		2A9571581E6AAFD200007E1D /* LJView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJView.m; sourceTree = "<group>"; };
-		2AA55EC41E45A9F500140497 /* world.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = world.jpg; sourceTree = "<group>"; };
-		2AA55EC61E45AA0200140497 /* head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head.jpg; sourceTree = "<group>"; };
-		2AA55EC81E45AA1B00140497 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
-		2AA55ECE1E45B88200140497 /* CIFilter 所有分类.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "CIFilter 所有分类.rtf"; sourceTree = "<group>"; };
-		2AEE78601E8FAC0F0010690B /* CIFilter所有类别及属性.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "CIFilter所有类别及属性.rtf"; sourceTree = "<group>"; };
+		2ADAA02F1E978A94002A7C55 /* LJFilterConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFilterConst.h; sourceTree = "<group>"; };
+		2ADAA0301E978A94002A7C55 /* LJFilterConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFilterConst.m; sourceTree = "<group>"; };
+		2ADAA0311E978A94002A7C55 /* LJFilterEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFilterEffect.h; sourceTree = "<group>"; };
+		2ADAA0321E978A94002A7C55 /* LJFilterEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFilterEffect.m; sourceTree = "<group>"; };
+		2ADAA0331E978A94002A7C55 /* LJFilterNameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJFilterNameView.h; sourceTree = "<group>"; };
+		2ADAA0341E978A94002A7C55 /* LJFilterNameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJFilterNameView.m; sourceTree = "<group>"; };
+		2ADAA0391E978B72002A7C55 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		2ADAA03A1E978B72002A7C55 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		2ADAA03B1E978B72002A7C55 /* CIFilter 所有分类.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "CIFilter 所有分类.rtf"; sourceTree = "<group>"; };
+		2ADAA03C1E978B72002A7C55 /* CIFilter所有类别及属性.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "CIFilter所有类别及属性.rtf"; sourceTree = "<group>"; };
+		2ADAA03D1E978B72002A7C55 /* head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head.jpg; sourceTree = "<group>"; };
+		2ADAA03E1E978B72002A7C55 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
+		2ADAA03F1E978B72002A7C55 /* world.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = world.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,27 +182,23 @@
 		2A24023A1E278DED00FF54F0 /* CIImageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2ADAA02E1E978A94002A7C55 /* LJFilter */,
 				2A81C63B1E851CDA00C77C84 /* LJTools */,
 				2A24023E1E278DED00FF54F0 /* AppDelegate.h */,
 				2A24023F1E278DED00FF54F0 /* AppDelegate.m */,
 				2A2402411E278DED00FF54F0 /* ViewController.h */,
 				2A2402421E278DED00FF54F0 /* ViewController.m */,
-				2A7862861E91E14200332059 /* LJFilterNameView.h */,
-				2A7862871E91E14200332059 /* LJFilterNameView.m */,
 				2A9571511E6A969000007E1D /* SecondViewController.h */,
 				2A9571521E6A969000007E1D /* SecondViewController.m */,
 				2A9571541E6A997700007E1D /* LJLayer.h */,
 				2A9571551E6A997700007E1D /* LJLayer.m */,
 				2A9571571E6AAFD200007E1D /* LJView.h */,
 				2A9571581E6AAFD200007E1D /* LJView.m */,
-				2A68F69E1E8CAC6D0038F5E3 /* LJFilterEffect.h */,
-				2A68F69F1E8CAC6D0038F5E3 /* LJFilterEffect.m */,
-				2A68F6A21E8CB83A0038F5E3 /* LJFilterConst.h */,
-				2A68F6A31E8CB83A0038F5E3 /* LJFilterConst.m */,
 				2A2402441E278DED00FF54F0 /* Main.storyboard */,
 				2A2402471E278DEE00FF54F0 /* Assets.xcassets */,
 				2A2402491E278DEE00FF54F0 /* LaunchScreen.storyboard */,
 				2A24024C1E278DEE00FF54F0 /* Info.plist */,
+				2ADAA0381E978B72002A7C55 /* Files */,
 				2A24023B1E278DED00FF54F0 /* Supporting Files */,
 			);
 			path = CIImageDemo;
@@ -211,13 +207,6 @@
 		2A24023B1E278DED00FF54F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2AA55ECE1E45B88200140497 /* CIFilter 所有分类.rtf */,
-				2AEE78601E8FAC0F0010690B /* CIFilter所有类别及属性.rtf */,
-				2AA55EC81E45AA1B00140497 /* button.png */,
-				2AA55EC61E45AA0200140497 /* head.jpg */,
-				2A6813881E971F9000E8F6FB /* bg.jpg */,
-				2AA55EC41E45A9F500140497 /* world.jpg */,
-				2A68138A1E971FC700E8F6FB /* mask.png */,
 				2A24023C1E278DED00FF54F0 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -319,6 +308,33 @@
 				2A81C6681E851CDA00C77C84 /* TimeTools.m */,
 			);
 			path = TimeTools;
+			sourceTree = "<group>";
+		};
+		2ADAA02E1E978A94002A7C55 /* LJFilter */ = {
+			isa = PBXGroup;
+			children = (
+				2ADAA02F1E978A94002A7C55 /* LJFilterConst.h */,
+				2ADAA0301E978A94002A7C55 /* LJFilterConst.m */,
+				2ADAA0311E978A94002A7C55 /* LJFilterEffect.h */,
+				2ADAA0321E978A94002A7C55 /* LJFilterEffect.m */,
+				2ADAA0331E978A94002A7C55 /* LJFilterNameView.h */,
+				2ADAA0341E978A94002A7C55 /* LJFilterNameView.m */,
+			);
+			path = LJFilter;
+			sourceTree = "<group>";
+		};
+		2ADAA0381E978B72002A7C55 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				2ADAA0391E978B72002A7C55 /* bg.jpg */,
+				2ADAA03A1E978B72002A7C55 /* button.png */,
+				2ADAA03B1E978B72002A7C55 /* CIFilter 所有分类.rtf */,
+				2ADAA03C1E978B72002A7C55 /* CIFilter所有类别及属性.rtf */,
+				2ADAA03D1E978B72002A7C55 /* head.jpg */,
+				2ADAA03E1E978B72002A7C55 /* mask.png */,
+				2ADAA03F1E978B72002A7C55 /* world.jpg */,
+			);
+			path = Files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,17 +446,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A68138B1E971FC700E8F6FB /* mask.png in Resources */,
-				2AA55EC51E45A9F500140497 /* world.jpg in Resources */,
-				2AA55EC71E45AA0200140497 /* head.jpg in Resources */,
-				2AA55EC91E45AA1B00140497 /* button.png in Resources */,
-				2AA55ECF1E45B88200140497 /* CIFilter 所有分类.rtf in Resources */,
+				2ADAA0461E978B72002A7C55 /* world.jpg in Resources */,
 				2A24024B1E278DEE00FF54F0 /* LaunchScreen.storyboard in Resources */,
 				2A2402481E278DEE00FF54F0 /* Assets.xcassets in Resources */,
+				2ADAA0421E978B72002A7C55 /* CIFilter 所有分类.rtf in Resources */,
 				2A81C66A1E851CDA00C77C84 /* mark.png in Resources */,
+				2ADAA0441E978B72002A7C55 /* head.jpg in Resources */,
 				2A2402461E278DED00FF54F0 /* Main.storyboard in Resources */,
-				2A6813891E971F9000E8F6FB /* bg.jpg in Resources */,
-				2AEE78611E8FAC0F0010690B /* CIFilter所有类别及属性.rtf in Resources */,
+				2ADAA0431E978B72002A7C55 /* CIFilter所有类别及属性.rtf in Resources */,
+				2ADAA0401E978B72002A7C55 /* bg.jpg in Resources */,
+				2ADAA0411E978B72002A7C55 /* button.png in Resources */,
+				2ADAA0451E978B72002A7C55 /* mask.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,18 +483,19 @@
 			files = (
 				2A9571531E6A969000007E1D /* SecondViewController.m in Sources */,
 				2A81C6771E851CDA00C77C84 /* LJAlertView.m in Sources */,
-				2A68F6A01E8CAC6D0038F5E3 /* LJFilterEffect.m in Sources */,
 				2A81C6691E851CDA00C77C84 /* Foundation+Log.m in Sources */,
 				2A81C6711E851CDA00C77C84 /* UIView+LJ.m in Sources */,
 				2A81C66C1E851CDA00C77C84 /* NSTimer+LJ.m in Sources */,
+				2ADAA0361E978A94002A7C55 /* LJFilterEffect.m in Sources */,
 				2A81C6731E851CDA00C77C84 /* LJPHPhotoTools.m in Sources */,
 				2A81C6701E851CDA00C77C84 /* UISwitch+LJ.m in Sources */,
 				2A81C6791E851CDA00C77C84 /* LJSheetAlertView.m in Sources */,
 				2A9571561E6A997700007E1D /* LJLayer.m in Sources */,
+				2ADAA0351E978A94002A7C55 /* LJFilterConst.m in Sources */,
 				2A9571591E6AAFD200007E1D /* LJView.m in Sources */,
 				2A81C66E1E851CDA00C77C84 /* UIButton+LJ.m in Sources */,
+				2ADAA0371E978A94002A7C55 /* LJFilterNameView.m in Sources */,
 				2A2402431E278DED00FF54F0 /* ViewController.m in Sources */,
-				2A7862881E91E14200332059 /* LJFilterNameView.m in Sources */,
 				2A2402401E278DED00FF54F0 /* AppDelegate.m in Sources */,
 				2A81C66D1E851CDA00C77C84 /* NullSafe.m in Sources */,
 				2A81C6781E851CDA00C77C84 /* LJInfoAlert.m in Sources */,
@@ -488,7 +505,6 @@
 				2A24023D1E278DED00FF54F0 /* main.m in Sources */,
 				2A81C67B1E851CDA00C77C84 /* TimeTools.m in Sources */,
 				2A81C6721E851CDA00C77C84 /* LJImageTools.m in Sources */,
-				2A68F6A41E8CB83A0038F5E3 /* LJFilterConst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,7 +599,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -624,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -639,6 +655,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/renjinkui/Desktop/2016.3.1 Demo/CIImageDemo/CIImageDemo/LJTools/PrefixHeader.pch";
 				INFOPLIST_FILE = CIImageDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LJ.CIImageDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -653,6 +670,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/renjinkui/Desktop/2016.3.1 Demo/CIImageDemo/CIImageDemo/LJTools/PrefixHeader.pch";
 				INFOPLIST_FILE = CIImageDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LJ.CIImageDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
