@@ -33,6 +33,8 @@
 
 -(void)setLayerContents{
     
+    
+    
     //1 设置contents属性
     self.theLayer=[CALayer layer];
     self.theLayer.position=self.view.center;

@@ -228,7 +228,7 @@ UIKIT_EXTERN NSString *const LJCIVignetteEffect;
 UIKIT_EXTERN NSString *const LJCIXRay;//iOS 10
 
 
-#pragma mark - ================ CICategoryTransition(转变) ==================
+#pragma mark - ================ CICategoryTransition(转变,过渡) ==================
 /**  (accordion手风琴 fold折叠）  inputImage  inputTargetImage  inputBottomHeight  inputNumberOfFolds  inputFoldShadowAmount   inputTime*/
 UIKIT_EXTERN NSString *const LJCIAccordionFoldTransition;//iOS 8
 /**  inputImage  inputTargetImage  inputAngle  inputWidth  inputBarOffset(NSNumber)  inputTime */

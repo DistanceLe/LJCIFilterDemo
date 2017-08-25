@@ -54,6 +54,9 @@
         DLog(@"select Str = %@", sender);
         [self setFilterWithName:sender];
     }];
+    
+    self.originImageView.image = [UIImage imageNamed:@"world.jpg"];
+    self.maskImageView.image = [UIImage imageNamed:@"bg.jpg"];
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     if (self.nameView.lj_y >= IPHONE_HEIGHT) {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ONz-sA-RqF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ONz-sA-RqF">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -85,41 +85,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i6H-Sn-FqS">
-                                <rect key="frame" x="16" y="104" width="288" height="40"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdn-Qo-vlE">
-                                <rect key="frame" x="16" y="164" width="288" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonIconSelected" translatesAutoresizingMaskIntoConstraints="NO" id="2N9-jn-ys9">
+                                <rect key="frame" x="20" y="209.5" width="280" height="149"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Cyr-Vp-1Ge"/>
+                                    <constraint firstAttribute="width" secondItem="2N9-jn-ys9" secondAttribute="height" multiplier="15:8" id="SQK-rS-aSR"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ij-jV-9o2">
-                                <rect key="frame" x="16" y="224" width="288" height="40"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Xdn-Qo-vlE" firstAttribute="leading" secondItem="i6H-Sn-FqS" secondAttribute="leading" id="44a-9L-A2c"/>
-                            <constraint firstItem="i6H-Sn-FqS" firstAttribute="top" secondItem="n22-M0-Fav" secondAttribute="bottom" constant="40" id="831-bc-OH3"/>
-                            <constraint firstItem="3ij-jV-9o2" firstAttribute="leading" secondItem="i6H-Sn-FqS" secondAttribute="leading" id="Cd2-Jf-vnt"/>
-                            <constraint firstItem="3ij-jV-9o2" firstAttribute="width" secondItem="i6H-Sn-FqS" secondAttribute="width" id="EeF-7g-Rjk"/>
-                            <constraint firstItem="Xdn-Qo-vlE" firstAttribute="width" secondItem="i6H-Sn-FqS" secondAttribute="width" id="QEb-gh-dK4"/>
-                            <constraint firstItem="3ij-jV-9o2" firstAttribute="top" secondItem="Xdn-Qo-vlE" secondAttribute="bottom" constant="20" id="YeJ-kT-HFt"/>
-                            <constraint firstItem="3ij-jV-9o2" firstAttribute="height" secondItem="i6H-Sn-FqS" secondAttribute="height" id="eXo-6g-V24"/>
-                            <constraint firstItem="Xdn-Qo-vlE" firstAttribute="height" secondItem="i6H-Sn-FqS" secondAttribute="height" id="lUN-Du-Q0V"/>
-                            <constraint firstItem="Xdn-Qo-vlE" firstAttribute="leading" secondItem="spj-RT-D5W" secondAttribute="leading" constant="16" id="rzo-dB-PPd"/>
-                            <constraint firstItem="Xdn-Qo-vlE" firstAttribute="top" secondItem="i6H-Sn-FqS" secondAttribute="bottom" constant="20" id="ySn-oE-s2g"/>
-                            <constraint firstItem="Xdn-Qo-vlE" firstAttribute="centerX" secondItem="spj-RT-D5W" secondAttribute="centerX" id="zSC-Ct-e08"/>
+                            <constraint firstItem="2N9-jn-ys9" firstAttribute="leading" secondItem="spj-RT-D5W" secondAttribute="leading" constant="20" id="BsX-Ss-Adm"/>
+                            <constraint firstItem="2N9-jn-ys9" firstAttribute="centerY" secondItem="spj-RT-D5W" secondAttribute="centerY" id="EXO-TU-gQz"/>
+                            <constraint firstItem="2N9-jn-ys9" firstAttribute="centerX" secondItem="spj-RT-D5W" secondAttribute="centerX" id="TXS-VO-PlP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FKr-Ae-xew">
@@ -166,11 +143,38 @@
                             <constraint firstAttribute="trailing" secondItem="taT-hW-1Ya" secondAttribute="trailing" id="Zq3-zS-U83"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dJR-4P-YTQ"/>
+                    <navigationItem key="navigationItem" id="dJR-4P-YTQ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Yyp-fn-s7X">
+                            <connections>
+                                <segue destination="Png-4u-jdt" kind="push" id="HL4-UZ-7nR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e18-hb-es9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1779" y="112"/>
+        </scene>
+        <!--GLKit View Controller-->
+        <scene sceneID="13j-lk-48y">
+            <objects>
+                <glkViewController preferredFramesPerSecond="30" id="Png-4u-jdt" customClass="LJGLViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P8g-gl-bvO"/>
+                        <viewControllerLayoutGuide type="bottom" id="YOj-2f-HKx"/>
+                    </layoutGuides>
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="Dpp-XL-mUi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <connections>
+                            <outlet property="delegate" destination="Png-4u-jdt" id="2ed-6Y-kpE"/>
+                        </connections>
+                    </glkView>
+                    <navigationItem key="navigationItem" id="NTo-mO-vKf"/>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9eu-Fr-6Nx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2556" y="102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pey-1K-2PB">
@@ -192,6 +196,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="buttonIconSelected" width="25" height="25"/>
         <image name="head.jpg" width="200" height="200"/>
         <image name="mask.png" width="180" height="180"/>
     </resources>

@@ -15,6 +15,8 @@
 		2A24024B1E278DEE00FF54F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2402491E278DEE00FF54F0 /* LaunchScreen.storyboard */; };
 		2A2402561E278DEE00FF54F0 /* CIImageDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2402551E278DEE00FF54F0 /* CIImageDemoTests.m */; };
 		2A2402611E278DEE00FF54F0 /* CIImageDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2402601E278DEE00FF54F0 /* CIImageDemoUITests.m */; };
+		2A6BE2A51F48218000C6F359 /* LJLayerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BE2A41F48218000C6F359 /* LJLayerDelegate.m */; };
+		2A6BE2A81F48283200C6F359 /* LJGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BE2A71F48283200C6F359 /* LJGLViewController.m */; };
 		2A81C6691E851CDA00C77C84 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A81C63D1E851CDA00C77C84 /* Foundation+Log.m */; };
 		2A81C66A1E851CDA00C77C84 /* mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A81C63E1E851CDA00C77C84 /* mark.png */; };
 		2A81C66B1E851CDA00C77C84 /* NSNotificationCenter+LJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A81C6401E851CDA00C77C84 /* NSNotificationCenter+LJ.m */; };
@@ -80,6 +82,10 @@
 		2A24025C1E278DEE00FF54F0 /* CIImageDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CIImageDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2402601E278DEE00FF54F0 /* CIImageDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIImageDemoUITests.m; sourceTree = "<group>"; };
 		2A2402621E278DEE00FF54F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A6BE2A31F48218000C6F359 /* LJLayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJLayerDelegate.h; sourceTree = "<group>"; };
+		2A6BE2A41F48218000C6F359 /* LJLayerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJLayerDelegate.m; sourceTree = "<group>"; };
+		2A6BE2A61F48283200C6F359 /* LJGLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJGLViewController.h; sourceTree = "<group>"; };
+		2A6BE2A71F48283200C6F359 /* LJGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJGLViewController.m; sourceTree = "<group>"; };
 		2A81C63D1E851CDA00C77C84 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		2A81C63E1E851CDA00C77C84 /* mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mark.png; sourceTree = "<group>"; };
 		2A81C63F1E851CDA00C77C84 /* NSNotificationCenter+LJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+LJ.h"; sourceTree = "<group>"; };
@@ -182,6 +188,7 @@
 		2A24023A1E278DED00FF54F0 /* CIImageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2A6BE2A21F481EAB00C6F359 /* LJOpenGL_ES */,
 				2ADAA02E1E978A94002A7C55 /* LJFilter */,
 				2A81C63B1E851CDA00C77C84 /* LJTools */,
 				2A24023E1E278DED00FF54F0 /* AppDelegate.h */,
@@ -190,6 +197,8 @@
 				2A2402421E278DED00FF54F0 /* ViewController.m */,
 				2A9571511E6A969000007E1D /* SecondViewController.h */,
 				2A9571521E6A969000007E1D /* SecondViewController.m */,
+				2A6BE2A31F48218000C6F359 /* LJLayerDelegate.h */,
+				2A6BE2A41F48218000C6F359 /* LJLayerDelegate.m */,
 				2A9571541E6A997700007E1D /* LJLayer.h */,
 				2A9571551E6A997700007E1D /* LJLayer.m */,
 				2A9571571E6AAFD200007E1D /* LJView.h */,
@@ -228,6 +237,15 @@
 				2A2402621E278DEE00FF54F0 /* Info.plist */,
 			);
 			path = CIImageDemoUITests;
+			sourceTree = "<group>";
+		};
+		2A6BE2A21F481EAB00C6F359 /* LJOpenGL_ES */ = {
+			isa = PBXGroup;
+			children = (
+				2A6BE2A61F48283200C6F359 /* LJGLViewController.h */,
+				2A6BE2A71F48283200C6F359 /* LJGLViewController.m */,
+			);
+			path = LJOpenGL_ES;
 			sourceTree = "<group>";
 		};
 		2A81C63B1E851CDA00C77C84 /* LJTools */ = {
@@ -495,10 +513,12 @@
 				2A9571591E6AAFD200007E1D /* LJView.m in Sources */,
 				2A81C66E1E851CDA00C77C84 /* UIButton+LJ.m in Sources */,
 				2ADAA0371E978A94002A7C55 /* LJFilterNameView.m in Sources */,
+				2A6BE2A51F48218000C6F359 /* LJLayerDelegate.m in Sources */,
 				2A2402431E278DED00FF54F0 /* ViewController.m in Sources */,
 				2A2402401E278DED00FF54F0 /* AppDelegate.m in Sources */,
 				2A81C66D1E851CDA00C77C84 /* NullSafe.m in Sources */,
 				2A81C6781E851CDA00C77C84 /* LJInfoAlert.m in Sources */,
+				2A6BE2A81F48283200C6F359 /* LJGLViewController.m in Sources */,
 				2A81C66F1E851CDA00C77C84 /* UIImage+LJ.m in Sources */,
 				2A81C67A1E851CDA00C77C84 /* RegularTools.m in Sources */,
 				2A81C66B1E851CDA00C77C84 /* NSNotificationCenter+LJ.m in Sources */,

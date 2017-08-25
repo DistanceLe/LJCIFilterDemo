@@ -219,7 +219,7 @@ NSString *const LJCIVignetteEffect = @"CIVignetteEffect";
 NSString *const LJCIXRay = @"CIXRay";//iOS 10
 
 
-#pragma mark - ================ CICategoryTransition(转变) ==================
+#pragma mark - ================ CICategoryTransition(转变,过渡) ==================
 /**  (accordion手风琴 fold折叠）  inputImage  inputTargetImage  inputBottomHeight  inputNumberOfFolds  inputFoldShadowAmount   inputTime*/
 NSString *const LJCIAccordionFoldTransition = @"CIAccordionFoldTransition";//iOS 8
 /**  inputImage  inputTargetImage  inputAngle  inputWidth  inputBarOffset(NSNumber)  inputTime */
